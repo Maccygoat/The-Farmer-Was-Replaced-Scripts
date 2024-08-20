@@ -1,6 +1,7 @@
 def buy_pumpkin():
 	if num_items(Items.Pumpkin_Seed) == 0:
-		trade(Items.Pumpkin_Seed, 16)
+		worldsize = get_world_size() * get_world_size()
+		trade(Items.Pumpkin_Seed, worldsize)
 def plant_pumpkin():
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
