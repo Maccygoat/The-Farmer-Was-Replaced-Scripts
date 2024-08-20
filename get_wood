@@ -1,0 +1,21 @@
+# This is for a plot size of 4x4
+
+def get_wood():
+	corner_coordinates = 0, 3
+	for i in range(get_world_size()):
+		for j in range(get_world_size()):
+			if can_harvest() == True:
+				harvest()
+				if get_pos_x() in corner_coordinates and get_pos_y() in corner_coordinates: 
+					plant(Entities.Tree)
+					water_plants()
+				else:
+					plant(Entities.Bush)
+					water_plants()
+			elif can_harvest() == False:
+				water_plants()
+			move(North)
+		move(East)
+
+while True:
+	get_wood()
